@@ -1,8 +1,143 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
+const { eventtitel, starttime, categoryicon, category, endtime} = Astro.props;
 ---
 
-<MainLayout>
 
+<MainLayout>
+<div class="singleviewsite">
+<a href="/listview/" class="back">Tilbage</a>
+    <section class="pinkbox">
+        <div>
+            <div class="topsinglegrid">
+                <div>
+                    <h1>Ikebana</h1>
+                    <h2>ON THE LAWN</h2>
+                    <p class="time">12:30 - 16:00</p>
+                </div>
+                <div class="topsinglegridright">
+                    <img src="../icons/workshops.svg" alt="Kategori ikon">
+                    <p class="category">Workshops</p>
+                </div>
+            </div>
+                
+                
+                <p class="description1">Ikebana er den japanske kunst at arrangere blomster i en minimalistisk stil. Workshoppens instruktør vil guide dig i at vælge og placere blomster og grene på en harmonisk måde, mens du lærer om ikebanas æstetik og filosofi.</p>
+                <p class="description2">Ved afslutningen af workshoppet vil du have skabt dit eget smukke ikebana-arrangement og have en dybere forståelse af denne ældgamle japanske kunstform.</p>
+                <button>+ Tilføj til mit program</button>
+
+        </div>
+        <div class="eventphoto">
+            <img src="" alt="Billede af event">
+        </div>
+    </section>
+</div>
 </MainLayout>
+
+<style>
+    a {
+        font-family: Oswald;
+        font-size: 1.5rem;
+        color: var(--text-red);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .singleviewsite {
+        max-width: 900px;
+        margin-inline: auto;
+        margin-top: 3%;
+    }
+
+    .pinkbox {
+        background-color: var(--text-pink);
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        padding: 3%;
+        gap: 50px;
+        border: 1px solid var(--text-red);
+        margin-top: 1%;
+    }
+
+    .topsinglegrid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        margin-bottom: 7%;
+    }
+
+    .topsinglegridright {
+        text-align: center;
+        font-family: Sansita;
+        color: var(--text-red);
+    }
+
+    .topsinglegridright img {
+        margin-top: 5%;
+        width: 60%;
+    }
+
+    .time {
+        background-color: var(--text-lighterred);
+        color: var(--text-white);
+        font-family: Oswald;
+        font-size: 1rem;
+        padding-left: 10px;
+        width: 100px;
+        margin-top: 3%;
+    }
+
+    .eventphoto img {
+        border: 1px solid var(--text-red);
+        width: 100%;
+    }
+
+
+    h1 {
+        font-family: Oswald;
+        color: var(--text-red);
+        font-size: 3rem;
+        font-weight: 100;
+    }
+
+    h2 {
+        font-family: Oswald;
+        color: var(--text-red);
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+
+    .category {
+        font-family: Sansita;
+    }    
+
+    p {
+        font-family: Roboto;
+        color: var(--text-red);
+        margin-top: 3%;
+        line-height: 1.5;
+    }
+
+    button {
+        background-color: var(--text-red);
+        border-style: none;
+        color: var(--text-white);
+        font-family: Roboto;
+        font-size: 1rem;
+        padding: 5px;
+        width: 300px;
+        margin-top: 7%;
+        border-radius: 7px;
+    }
+
+    button:hover {
+        background-color: var(--text-pink);
+        border: 1px solid var(--text-red);
+        color: var(--text-red);
+    }
+
+
+</style>

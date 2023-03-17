@@ -16,9 +16,9 @@ const response = await fetch(url, options);
 const data = await response.json();
 
 
-const MainStage = data.filter((events) => events.stage == 1);
-const SecondStage = data.filter((events) => events.stage == 2);
-const OnTheLawn = data.filter((events) => events.stage == 3);
+const MainStage = data.filter((event) => event.stage === 1);
+const SecondStage = data.filter((event) => event.stage === 2);
+const OnTheLawn = data.filter((event) => event.stage === 3);
 
 ---
 
@@ -48,9 +48,9 @@ const OnTheLawn = data.filter((events) => events.stage == 3);
         <h3>22. april</h3>
     
         <section class="listgridlordag">
-            <Shelf stage={MainStage} filter="Main Stage"/>
-            <Shelf stage={SecondStage} filter="Second Stage"/>
-            <Shelf stage={OnTheLawn} filter="On The Lawn" />
+            <Shelf events={MainStage} stage="Main Stage"/>
+            <Shelf events={SecondStage} stage="Second Stage"/>
+            <Shelf events={OnTheLawn} stage="On The Lawn"/>
         </section>
 
     <div class="pinkbox">
@@ -58,9 +58,9 @@ const OnTheLawn = data.filter((events) => events.stage == 3);
         <h3>23. april</h3>
 
         <section class="listgridsondag">
-            <Shelf stage={MainStage} filter="Main Stage"/>
-            <Shelf stage={SecondStage} filter="Second Stage"/>
-            <Shelf stage={OnTheLawn} filter="On The Lawn" />
+            <Shelf events={MainStage} stage="Main Stage"/>
+            <Shelf events={SecondStage} stage="Second Stage"/>
+            <Shelf events={OnTheLawn} stage="On The Lawn"/>
         </section>
 
     </div>

@@ -17,13 +17,12 @@ const data = await response.json();
 
 <div>
     {
-        data.map((events) => (
+        data.map((event) => (
             <Event
-            link={"/events/" + events.id}
-            categoryicon={`/icons/${events.categoryicon}`}
-            eventtitel={events.eventtitel}
-            starttime={events.starttime}
-
+            link={"/events/" + event.id}
+            categoryicon={`/icons/${event.categoryicon}`}
+            eventtitel={event.eventtitel}
+            starttime={event.starttime}
         />
         ))
     }
