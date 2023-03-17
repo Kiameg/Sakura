@@ -1,0 +1,49 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+@font-face {
+    font-family: Oswald;
+    src: url("../fonts/oswald-variablefont_wght-webfont.woff2");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/roboto-regular-webfont.woff2");
+}
+
+@font-face {
+    font-family: Sansita;
+    src: url("../fonts/sansita-regular-webfont.woff2");
+}
+
+
+html {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E4F7FF 48.96%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
+    --text-red: #C5202D;
+    --text-lighterred: #D70023;
+    --text-lightblue: #E4F7FF;
+    --text-pink: #FEEFF6;
+    --text-white: #ffffff;
+
+}
+
+
+
+
+
+body {
+    max-width: 1100px;
+    margin-inline: auto;
+}
+
+
+

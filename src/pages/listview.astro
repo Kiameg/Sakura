@@ -1,0 +1,104 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Shelf from "../components/Shelf.astro";
+import "../styles/global.css";
+const { title } = Astro.props;
+
+const url = "https://kutprjsetyxgrdcvsngm.supabase.co/rest/v1/sakura";
+
+const options = {
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1dHByanNldHl4Z3JkY3ZzbmdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkwNDQwOTYsImV4cCI6MTk5NDYyMDA5Nn0.RnatBkh36ZvkpU3vpFGUZ1eiOO2_4_nKZmoczvvTddM"
+	},
+};
+---
+
+<MainLayout>
+    <h1>Program</h1>
+    
+        <div class="programicons">
+            <div>
+                <img src="../icons/barn.svg" alt="For børn ikon">
+                <h4>For børn</h4>
+            </div>
+            <div>
+                <img src="../icons/mad.svg" alt="Mad ikon">
+                <h4>Mad</h4>
+            </div>
+            <div>
+                <img src="../icons/workshops.svg" alt="Workshops ikon">
+                <h4>Workshops</h4>
+            </div>
+            <div>
+                <img src="../icons/events.svg" alt="Events ikon">
+                <h4>Events</h4>
+            </div>
+        </div>
+    
+        <h2>Lørdag</h2>
+        <h3>22. april</h3>
+    
+        <section class="listgrid">
+<Shelf />
+<Shelf />
+<Shelf />
+        </section>
+</MainLayout>
+
+
+<style>
+    h1 {
+        font-family: Sansita;
+        font-size: 4rem;
+        color: var(--text-red);
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .programicons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        color: var(--text-red);
+        gap: 80px;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+        text-align: center;
+        font-family: Sansita;
+        margin-top: 4%;
+    }
+
+    h2 {
+        margin-top: 7%;
+        font-size: 3rem;
+        font-family: Sansita;
+        text-align: center;
+        color: var(--text-red);
+    }
+
+    h3 {
+
+        font-size: 1.2rem;
+        font-family: Roboto;
+        text-align: center;
+        color: var(--text-red);
+    }
+
+.listgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.listgrid1 {
+    border-right: solid 1px #C5202D;
+}
+
+.listgrid2 {
+    border-right: solid 1px #C5202D;
+}
+
+</style>
