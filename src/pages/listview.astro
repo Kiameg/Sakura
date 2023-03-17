@@ -11,6 +11,15 @@ const options = {
 		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1dHByanNldHl4Z3JkY3ZzbmdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkwNDQwOTYsImV4cCI6MTk5NDYyMDA5Nn0.RnatBkh36ZvkpU3vpFGUZ1eiOO2_4_nKZmoczvvTddM"
 	},
 };
+
+const response = await fetch(url, options);
+const data = await response.json();
+
+
+const MainStage = data.filter((events) => events.stage == 1);
+const SecondStage = data.filter((events) => events.stage == 2);
+const OnTheLawn = data.filter((events) => events.stage == 3);
+
 ---
 
 <MainLayout>
@@ -38,11 +47,24 @@ const options = {
         <h2>Lørdag</h2>
         <h3>22. april</h3>
     
-        <section class="listgrid">
-<Shelf />
-<Shelf />
-<Shelf />
+        <section class="listgridlordag">
+            <Shelf stage={MainStage} filter="Main Stage"/>
+            <Shelf stage={SecondStage} filter="Second Stage"/>
+            <Shelf stage={OnTheLawn} filter="On The Lawn" />
         </section>
+
+    <div class="pinkbox">
+        <h2 class="h2sondag">Søndag</h2>
+        <h3>23. april</h3>
+
+        <section class="listgridsondag">
+            <Shelf stage={MainStage} filter="Main Stage"/>
+            <Shelf stage={SecondStage} filter="Second Stage"/>
+            <Shelf stage={OnTheLawn} filter="On The Lawn" />
+        </section>
+
+    </div>
+
 </MainLayout>
 
 
@@ -87,11 +109,32 @@ const options = {
         color: var(--text-red);
     }
 
-.listgrid {
+.listgridlordag {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
+    padding-bottom: 50px;
 }
+
+.h2sondag {
+    margin-top: 0%;
+}
+
+.pinkbox {
+    background-color: var(--text-pink);
+    padding: 50px;
+    border-top: solid 2px #C5202D;
+    border-bottom: solid 2px #C5202D;
+}
+
+.listgridsondag {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+
+}
+
+
 
 
 </style>

@@ -1,5 +1,30 @@
 ---
 import Event from "./Event.astro";
+const { indhold, stage} = Astro.props;
+
+const url = "https://kutprjsetyxgrdcvsngm.supabase.co/rest/v1/sakura";
+
+const options = {
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1dHByanNldHl4Z3JkY3ZzbmdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkwNDQwOTYsImV4cCI6MTk5NDYyMDA5Nn0.RnatBkh36ZvkpU3vpFGUZ1eiOO2_4_nKZmoczvvTddM"
+	},
+};
+
+const response = await fetch(url, options);
+const data = await response.json();
+
 ---
 
-    <Event/>
+<div>
+    {
+        data.map((events) => (
+            <Event
+            link={"/events/" + events.id}
+            categoryicon={`/icons/${events.categoryicon}`}
+            eventtitel={events.eventtitel}
+            starttime={events.starttime}
+
+        />
+        ))
+    }
+</div>

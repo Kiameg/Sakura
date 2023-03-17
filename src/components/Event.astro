@@ -1,16 +1,16 @@
 ---
-
+const { eventtitel, starttime, categoryicon} = Astro.props;
 ---
 
 
 <section>
 <a href="">
-    <p class="time">10:45</p>
-    <h3>Wadaiko</h3>
+    <p class="time">{starttime}</p>
+    <h3>{eventtitel}</h3>
     <p class="readmore">Læs mere</p>
 </a>
 <div class="lefticon">
-    <img src="../icons/events.svg" alt="">
+    <img src={categoryicon} alt="">
     <p>+</p>
 </div>
 
@@ -21,7 +21,7 @@
 <style>
     section {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 3fr 1fr;
         border-bottom: solid 1px #C5202D;
         padding-top: 5%;
         padding-bottom: 5%;
@@ -32,8 +32,8 @@
         color: var(--text-white);
         font-family: Oswald;
         font-size: 1rem;
-        padding-left: 3.5%;
-        width: 25%;
+        padding-left: 8px;
+        width: 50px;
     }
 
     a {
@@ -53,7 +53,25 @@
         margin-top: 5%;
     }
 
+    .readmore:hover {
+        text-decoration: underline;
+    }
+
     .lefticon {
-        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .lefticon p {
+        font-size: 1.5rem;
+        color: var(--text-red);
+        font-weight: 600;
+
+    }
+
+    .lefticon img {
+        width: 100%;
     }
 </style>
