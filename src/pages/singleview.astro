@@ -11,7 +11,7 @@ const { eventtitel, starttime, categoryicon, category, endtime} = Astro.props;
     <section class="pinkbox">
         <div>
             <div class="topsinglegrid">
-                <div>
+                <div class="">
                     <h1>Ikebana</h1>
                     <h2>ON THE LAWN</h2>
                     <p class="time">12:30 - 16:00</p>
@@ -22,7 +22,7 @@ const { eventtitel, starttime, categoryicon, category, endtime} = Astro.props;
                 </div>
             </div>
                 
-                
+                <img src="" alt="Billede af event" class="eventphoto_mobile">
                 <p class="description1">Ikebana er den japanske kunst at arrangere blomster i en minimalistisk stil. Workshoppens instruktør vil guide dig i at vælge og placere blomster og grene på en harmonisk måde, mens du lærer om ikebanas æstetik og filosofi.</p>
                 <p class="description2">Ved afslutningen af workshoppet vil du have skabt dit eget smukke ikebana-arrangement og have en dybere forståelse af denne ældgamle japanske kunstform.</p>
                 <button>+ Tilføj til mit program</button>
@@ -51,6 +51,10 @@ const { eventtitel, starttime, categoryicon, category, endtime} = Astro.props;
         max-width: 900px;
         margin-inline: auto;
         margin-top: 3%;
+    }
+
+    .eventphoto_mobile {
+        display: none;
     }
 
     .pinkbox {
@@ -139,5 +143,31 @@ const { eventtitel, starttime, categoryicon, category, endtime} = Astro.props;
         color: var(--text-red);
     }
 
+    @media (max-width: 700px) {
+        .pinkbox {
+        display: grid;
+        grid-template-columns: 1fr;
+        }
+        
+        .eventphoto {
+            display: none;
+        }
+
+        .eventphoto_mobile {
+            display: block;
+            border: 1px solid var(--text-red);
+            width: 100%;
+        }
+
+        button {
+            margin-bottom: 5%;
+        }
+
+        .singleviewsite {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+}
 
 </style>

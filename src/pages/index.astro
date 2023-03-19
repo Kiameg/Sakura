@@ -6,17 +6,276 @@ import "../styles/global.css";
 
 <MainLayout>
     <div class="frontpage_topdiv">
-<img src="../logo/logo.svg" alt="Logo">
-<h1 class="h1_1line">COPENHAGEN</h1>
-<h1 class="h1_2line">SAKURA</h1>
-<h1 class="h1_3line">FESTIVAL</h1>
-<img src="../photos/pink_fuji_web.svg" alt="Fuji">
-</div>
+        <img src="../icons/logo.svg" alt="Logo" class="logo">
+        <h1 class="h1_1line">COPENHAGEN</h1>
+        <h1 class="h1_2line">SAKURA</h1>
+        <h1 class="h1_3line">FESTIVAL</h1>
+        <h4>22 - 23 / APRIL / 2023</h4>
+        <div class="fuji">
+            <img src="../photos/pink_fuji_web.svg" alt="Fuji" class="fuji_photo_web">
+            <img src="../photos/pink_fuji_mobil.svg" alt="Fuji" class="fuji_photo_mobile">
+            <img src="../icons/pil.png" alt="Pil ned" class="down">
+        </div>
+    </div>
+    <div class="pinkbox">
+        <div class="grid_frontpage_content">
+            <div class="text1_frontpage">
+                <h2>SAKURA</h2>
+                <p>Sakura, eller kirsebærblomster er et vigtigt symbol i japansk kultur og hvert år fejrer man træernes opblomstring med festivaller landet over.</p>
+                <p>I København har man siden 2007 fejret den selv samme tradition med vores helt egen sakura festival blandt de smukke kirsebærtræer på Langelinie. </p>
+                <p>I 2023 Fejres blomstringen i weekenden d. 22. - 23. april. Kom og fejr forårets kommen med os!</p>
+                <a href="/listview/"><button>SE ÅRETS PROGRAM</button></a>
+            </div>
+            <img src="../photos/sakura.webp" alt="Åbningsceremoni" class="photo1_frontpage">
+        </div>
+        <img src="../icons/pil.png" alt="Pil ned" class="down">
+    </div>
+    <div class="grid_frontpage_content">
+        <img src="../photos/map.webp" alt="Åbningsceremoni" class="photo2_frontpage">
+        <div class="text2_frontpage">
+            <h2>INFORMATION</h2>
+            <p>Entré: GRATIS</p>
+            <p>Langelinie Park</p>
+            <p>D. 22. - 23. april 2023</p>
+            <p>Kl. 11:00-16:00</p>
+            <img src="../icons/facebook.svg" alt="Facebook"><img src="../icons/instagram.svg" alt="Instagram">
+            <a href="https://www.google.com/maps/place/Langelinie+Park,+Nordre+Toldbod,+1259+K%C3%B8benhavn/@55.6908489,12.597081,17z/data=!3m1!4b1!4m6!3m5!1s0x465252df6722ab2d:0xa3995aee90fb6778!8m2!3d55.6908066!4d12.5992868!16s%2Fg%2F11bc8xnwd6" target="blank"><button>FIND VEJ</button></a>
+        </div>
+    </div>
+        <div class="pinkbox2">
+            <div class="sponsors_div">
+                <h2>SPONSORER</h2>
+                <img src="../sponsors/nec.png" alt="">
+                <img src="../sponsors/asia.png" alt="">
+                <img src="../sponsors/dp.png" alt="">
+                <img src="../sponsors/embassy.png" alt="">
+                <img src="../sponsors/fujifilm.png" alt="">
+                <img src="../sponsors/jd.png" alt="">
+                <img src="../sponsors/kommune.png" alt="">
+                <img src="../sponsors/mile.png" alt="">
+                <img src="../sponsors/bakery.png" alt="">
+                <img src="../sponsors/torm.png" alt="">
+                <img src="../sponsors/zeria.png" alt="">
+                <img src="../sponsors/toyota.png" alt="">
+                <img src="../sponsors/yashi.png" alt="">
+            </div>
+        </div>
 </MainLayout>
 
 
 
 <style>
+    .fuji {
+        position: relative;
+        text-align: center;
+    }
+
+    .fuji .down {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 85%);
+        width: 2%;
+        min-width: 20px;
+    }
+
+    .fuji_photo_mobile {
+        display: none;
+    }
     
+    .frontpage_topdiv {
+        text-align: center;
+        margin-top: 2%;
+        color: var(--text-red);
+        font-family: Sansita;
+    }
+
+    .h1_1line {
+        font-size: 3.8rem;
+        letter-spacing: 1px;
+        line-height: 1;
+        font-weight: 200;
+    }
+    
+    .h1_2line {
+        font-size: 7rem;
+        line-height: 1;
+        font-weight: 200;
+    }
+
+    .h1_3line {
+        font-size: 6rem;
+        letter-spacing: 3px;
+        line-height: 1;
+        font-weight: 200;
+    }
+
+    h4 {
+        padding-bottom: 2%;
+        font-family: Roboto;
+        font-size: 1.5rem;
+    }
+    
+    .logo {
+        width: 2.5%;
+        min-width: 50px;
+    }
+    img {
+        width: 100%;
+
+    }
+
+    .pinkbox {
+        background-color: var(--text-pink);
+        border-bottom: solid 2px #C5202D;
+        margin-bottom: 50px;
+    }
+
+    .pinkbox2 {
+        background-color: var(--text-pink);
+        border-bottom: solid 2px #C5202D;
+        border-top: solid 2px #C5202D;
+        margin-bottom: 50px;
+    }
+
+    .grid_frontpage_content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1100px;
+        margin-inline: auto;
+        gap: 40px;
+        padding-bottom: 50px;
+    }
+
+    .grid_frontpage_content img {
+        margin-right: 2%;
+    }
+
+    h2 {
+        color: var(--text-red);
+        font-family: Sansita;
+        font-size: 4rem;
+        letter-spacing: 3px;
+        font-weight: 200;
+    }
+
+    p {
+        font-family: Roboto;
+        color: var(--text-red);
+        font-size: 1rem;
+        padding-top: 3%;
+        line-height: 1.5;
+    }
+
+    button {
+        background-color: var(--text-red);
+        border-style: none;
+        color: var(--text-white);
+        font-family: Roboto;
+        font-size: 1rem;
+        padding: 5px;
+        width: 300px;
+        margin-top: 7%;
+        border-radius: 7px;
+    }
+
+    button:hover {
+        background-color: var(--text-pink);
+        border: 1px solid var(--text-red);
+        color: var(--text-red);
+    }
+
+    .text1_frontpage {
+        margin-left: 2%;
+        text-align: center;
+    }
+
+    .text1_frontpage p {
+        text-align: left;
+    }
+
+    .down {
+        width: 2%;
+        min-width: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 50px;
+
+    }
+
+    .photo1_frontpage, .photo2_frontpage {
+        border: solid 1px var(--text-red);
+    }
+
+    .text2_frontpage img {
+        width: 20%;
+        border: none;
+        padding-top: 10%;
+        padding-bottom: 5%;
+    }
+
+
+    .text2_frontpage p {
+        font-size: 1.5rem;
+    }
+
+    .sponsors_div {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        max-width: 800px;
+        margin-inline: auto;
+    }
+
+    .sponsors_div img {
+        width: 25%;
+        padding: 2%;
+    }
+
+
+    @media (max-width: 900px) {
+        .grid_frontpage_content {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: 2%;
+        margin-right: 2%;
+        }
+
+
+        h2 {
+            text-align: center;
+            font-size: 3.5rem;
+        }
+
+        .fuji_photo_web {
+            display: none;
+        }
+
+        .fuji_photo_mobile {
+            display: block;
+            margin-top: -5%;
+        }
+
+        .down {
+            display: none;
+        }
+
+        .text2_frontpage {
+            text-align: center;
+            order: -1;
+        }
+        .frontpage_topdiv {
+        
+        margin-top: 5%;
+        
+    }
+    
+    }
+
+
+
+
+
 </style>
 
