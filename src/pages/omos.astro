@@ -16,7 +16,7 @@ import "../styles/global.css";
 
   <div class="con_2">
     <div class="mw_1100">
-      <iframe class="video" width="1100" height="624" src="https://www.youtube.com/embed/vZGJPqfaOEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe class="video" src="https://www.youtube.com/embed/vZGJPqfaOEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       <h2>Hvornår startede Sakura Festival i København?</h2>
       <p>
         Udvalget fra Københavns Sakura Festival blev etableret i Februar 2008, for at arrangere det kulturelle event Sakura Festival med hjælp fra den Japanske ambassade i Danmark.<br /> Den originale ide kom fra den noble donation af 200 kirsebær blomst træer af Mr. Seiichi Takaki, Præsident af Andersen Institute of Bread & Life. De donerede træer blev plantet i Langelinie park. <br /><br />
@@ -74,6 +74,8 @@ import "../styles/global.css";
   .video {
     margin-top: 80px;
     border: 2px solid var(--text-red);
+    width: 100%;
+    aspect-ratio: 1000/624;
   }
 
   .img1 {
@@ -81,23 +83,25 @@ import "../styles/global.css";
   }
   img {
     border: 2px solid var(--text-red);
+    width: 100%;
   }
+
+
 
   @media (max-width: 900px) {
     .con_1 {
-      margin-left: 2%;
+      padding-left: 2%;
+      padding-right: 2%;
     }
 
     .con_2 {
-      margin-left: 2%;
+      padding-right: 2%;
+      padding-left: 2%;
     }
 
-    .mw_1100 {
-      max-width: 100%;
-    }
+    p {
+      font-size: 1rem;
+    } 
 
-    .img1 {
-      max-width: 100%;
-    }
   }
 </style>
