@@ -30,9 +30,9 @@ return data.map((event) => ({
 <div class="singleviewsite">
 <a href="/listview/" class="back">Tilbage</a>
     <section class="pinkbox">
-        <div>
+        <div class="flex_pinkbox">
             <div class="topsinglegrid">
-                <div class="">
+                <div>
                     <h1>{event.eventtitel}</h1>
                     <h2>{event.stage}</h2>
                     <p class="time">{event.starttime} - {event.endtime}</p>
@@ -163,6 +163,15 @@ return data.map((event) => ({
         background-color: var(--text-pink);
         border: 1px solid var(--text-red);
         color: var(--text-red);
+    }
+
+    .flex_pinkbox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex_pinkbox :last-child {
+        margin-top: auto;
     }
 
     @media (max-width: 700px) {
