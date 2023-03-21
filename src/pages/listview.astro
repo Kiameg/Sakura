@@ -17,12 +17,12 @@ const response = await fetch(url, options);
 const data = await response.json();
 
 
-const MainStage1 = data.filter((event) => event.stage == "1" && event.date == "2023-04-22");
-const MainStage2 = data.filter((event) => event.stage == "1" && event.date == "2023-04-23");
-const SecondStage1 = data.filter((event) => event.stage == "2" && event.date == "2023-04-22");
-const SecondStage2 = data.filter((event) => event.stage == "2" && event.date == "2023-04-23");
-const OnTheLawn1 = data.filter((event) => event.stage == "3" && event.date == "2023-04-22");
-const OnTheLawn2 = data.filter((event) => event.stage == "3" && event.date == "2023-04-23");
+const MainStage1 = data.filter((event) => event.stage == "MAIN STAGE" && event.date == "2023-04-22");
+const MainStage2 = data.filter((event) => event.stage == "MAIN STAGE" && event.date == "2023-04-23");
+const SecondStage1 = data.filter((event) => event.stage == "SECOND STAGE" && event.date == "2023-04-22");
+const SecondStage2 = data.filter((event) => event.stage == "SECOND STAGE" && event.date == "2023-04-23");
+const OnTheLawn1 = data.filter((event) => event.stage == "ON THE LAWN" && event.date == "2023-04-22");
+const OnTheLawn2 = data.filter((event) => event.stage == "ON THE LAWN" && event.date == "2023-04-23");
 
 ---
 

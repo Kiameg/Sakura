@@ -14,9 +14,9 @@
         <p>1561 København V</p>
     </div>
     <div class="footerdiv">
-        <p>Tlf: (+45) 33 45 51 21</p>
+        <a href="tel:+4533455121">Tlf: (+45) 33 45 51 21</a>
         <p>Fax: (+45) 33 11 33 77</p>
-        <p>Email: info.cph@ch.mofa.go.jp</p>
+        <a href="mailto: nfo.cph@ch.mofa.go.jp">Email: info.cph@ch.mofa.go.jp</a>
     </div>
     <div class="footerdiv">
         <a href="https://www.facebook.com/copenhagensakurafestival/" target="_blank"><img src="../icons/facebook.svg" alt="Facebook"></a>
@@ -50,9 +50,15 @@
         padding-bottom: 5%;
     }
 
-    p {
+    p, a {
         font-size: 1rem;
         font-family: Roboto;
+        text-decoration: none;
+        color: var(--text-red);
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 
     img {

@@ -1,7 +1,8 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import "../styles/global.css";
-const { event, eventtitel, starttime, categoryicon, category, endtime, stage} = Astro.props;
+
+import MainLayout from "../../layouts/MainLayout.astro";
+import "../../styles/global.css";
+const { event } = Astro.props;
 
 export async function getStaticPaths() {
     const url = "https://kutprjsetyxgrdcvsngm.supabase.co/rest/v1/sakura";
@@ -22,8 +23,6 @@ return data.map((event) => ({
 
 } 
 
-
-
 ---
 
 
@@ -39,18 +38,18 @@ return data.map((event) => ({
                     <p class="time">{event.starttime} - {event.endtime}</p>
                 </div>
                 <div class="topsinglegridright">
-                    <img src="/icons/{categoryicon}" alt="Kategori ikon">
+                    <img src={"../../public/icons/" + `${event.categoryicon}`} alt="Kategori ikon">
                     <p class="category">{event.category}</p>
                 </div>
             </div>
                 
-                <img src="/icons/{photo}" alt="Billede af event" class="eventphoto_mobile">
+                <img src={"../../public/photos/" + `${event.photo}`} alt="Billede af event" class="eventphoto_mobile">
                 <p class="description1">{event.description}</p>
                 <button>+ Tilføj til mit program</button>
 
         </div>
         <div class="eventphoto">
-            <img src="/icons/{photo}" alt="Billede af event">
+            <img src={"../../public/photos/" + `${event.photo}`} alt="Billede af event">
         </div>
     </section>
 </div>
@@ -156,6 +155,7 @@ return data.map((event) => ({
         width: 300px;
         margin-top: 7%;
         border-radius: 7px;
+        border: 1px solid var(--text-red);
     }
 
     button:hover {

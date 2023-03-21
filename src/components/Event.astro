@@ -1,10 +1,10 @@
 ---
-const { eventtitel, starttime, categoryicon} = Astro.props;
+const { eventtitel, starttime, categoryicon, link} = Astro.props;
 ---
 
 
 <section>
-<a href="">
+<a href={link}>
     <p class="time">{starttime}</p>
     <h3>{eventtitel}</h3>
     <p class="readmore">Læs mere</p>

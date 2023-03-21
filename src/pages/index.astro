@@ -28,7 +28,7 @@ import "../styles/global.css";
             </div>
             <img src="../photos/sakura.webp" alt="Åbningsceremoni" class="photo1_frontpage">
         </div>
-        <img src="../icons/pil.png" alt="Pil ned" class="down">
+
     </div>
     <div class="grid_frontpage_content">
         <img src="../photos/map.webp" alt="Åbningsceremoni" class="photo2_frontpage">
@@ -42,6 +42,7 @@ import "../styles/global.css";
             <a href="https://www.google.com/maps/place/Langelinie+Park,+Nordre+Toldbod,+1259+K%C3%B8benhavn/@55.6908489,12.597081,17z/data=!3m1!4b1!4m6!3m5!1s0x465252df6722ab2d:0xa3995aee90fb6778!8m2!3d55.6908066!4d12.5992868!16s%2Fg%2F11bc8xnwd6" target="blank"><button>FIND VEJ</button></a>
         </div>
     </div>
+
         <div class="pinkbox2">
             <div class="sponsors_div">
                 <h2>SPONSORER</h2>
@@ -127,15 +128,14 @@ import "../styles/global.css";
 
     .pinkbox {
         background-color: var(--text-pink);
-        border-bottom: solid 2px #C5202D;
+        border-bottom: solid 2px var(--text-red);
         margin-bottom: 50px;
-        margin-top: -1%;
     }
 
     .pinkbox2 {
         background-color: var(--text-pink);
-        border-bottom: solid 2px #C5202D;
-        border-top: solid 2px #C5202D;
+        border-bottom: solid 2px var(--text-red);
+        border-top: solid 2px var(--text-red);
         margin-bottom: 50px;
     }
 
@@ -146,6 +146,12 @@ import "../styles/global.css";
         margin-inline: auto;
         gap: 40px;
         padding-bottom: 50px;
+        padding-top: 50px;
+        margin-top: -2%;
+        margin-left: auto;
+        margin-right: auto;
+        
+
     }
 
     .grid_frontpage_content img {
@@ -158,6 +164,7 @@ import "../styles/global.css";
         font-size: 4rem;
         letter-spacing: 3px;
         font-weight: 200;
+        text-align: left;
     }
 
     p {
@@ -178,6 +185,7 @@ import "../styles/global.css";
         width: 300px;
         margin-top: 7%;
         border-radius: 7px;
+        border: 1px solid var(--text-red);
     }
 
     button:hover {
@@ -187,8 +195,8 @@ import "../styles/global.css";
     }
 
     .text1_frontpage {
-        margin-left: 2%;
         text-align: center;
+        margin-left: 2%;
     }
 
     .text1_frontpage p {
