@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Shelf from "../components/Shelf.astro";
+import {Debug} from "astro/components";
 import "../styles/global.css";
 const { title } = Astro.props;
 
@@ -16,9 +17,12 @@ const response = await fetch(url, options);
 const data = await response.json();
 
 
-const MainStage = data.filter((event) => event.stage === 1);
-const SecondStage = data.filter((event) => event.stage === 2);
-const OnTheLawn = data.filter((event) => event.stage === 3);
+const MainStage1 = data.filter((event) => event.stage == "1" && event.date == "2023-04-22");
+const MainStage2 = data.filter((event) => event.stage == "1" && event.date == "2023-04-23");
+const SecondStage1 = data.filter((event) => event.stage == "2" && event.date == "2023-04-22");
+const SecondStage2 = data.filter((event) => event.stage == "2" && event.date == "2023-04-23");
+const OnTheLawn1 = data.filter((event) => event.stage == "3" && event.date == "2023-04-22");
+const OnTheLawn2 = data.filter((event) => event.stage == "3" && event.date == "2023-04-23");
 
 ---
 
@@ -47,10 +51,11 @@ const OnTheLawn = data.filter((event) => event.stage === 3);
         <h2>Lørdag</h2>
         <h3>22. april</h3>
     
+
         <section class="listgridlordag">
-            <Shelf events={MainStage} stage="Main Stage"/>
-            <Shelf events={SecondStage} stage="Second Stage"/>
-            <Shelf events={OnTheLawn} stage="On The Lawn"/>
+            <Shelf indhold={MainStage1} stage="MAIN STAGE"/>
+            <Shelf indhold={SecondStage1} stage="SECOND STAGE"/>
+            <Shelf indhold={OnTheLawn1} stage="ON THE LAWN"/>
         </section>
 
     <div class="pinkbox">
@@ -58,9 +63,9 @@ const OnTheLawn = data.filter((event) => event.stage === 3);
         <h3>23. april</h3>
 
         <section class="listgridsondag">
-            <Shelf events={MainStage} stage="Main Stage"/>
-            <Shelf events={SecondStage} stage="Second Stage"/>
-            <Shelf events={OnTheLawn} stage="On The Lawn"/>
+            <Shelf indhold={MainStage2} stage="MAIN STAGE"/>
+            <Shelf indhold={SecondStage2} stage="SECOND STAGE"/>
+            <Shelf indhold={OnTheLawn2} stage="ON THE LAWN"/>
         </section>
 
     </div>
@@ -75,7 +80,7 @@ const OnTheLawn = data.filter((event) => event.stage === 3);
         color: var(--text-red);
         text-align: center;
         margin-top: 5%;
-        margin-bottom: 5%;
+        margin-bottom: 3%;
     }
 
     .programicons {
@@ -101,7 +106,7 @@ const OnTheLawn = data.filter((event) => event.stage === 3);
     }
 
     h2 {
-        margin-top: 7%;
+        margin-top: 5%;
         font-size: 3rem;
         font-family: Sansita;
         text-align: center;
@@ -119,7 +124,6 @@ const OnTheLawn = data.filter((event) => event.stage === 3);
 .listgridlordag {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
     padding-bottom: 50px;
     margin-left: 5%;
     margin-right: 5%;
@@ -142,7 +146,6 @@ const OnTheLawn = data.filter((event) => event.stage === 3);
 .listgridsondag {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
     max-width: 1100px;
     margin-inline: auto;
     padding-bottom: 50px;
