@@ -1,0 +1,194 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+const { event, eventtitel, starttime, categoryicon, category, endtime, stage} = Astro.props;
+
+export async function getStaticPaths() {
+    const url = "https://kutprjsetyxgrdcvsngm.supabase.co/rest/v1/sakura";
+
+const options = {
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt1dHByanNldHl4Z3JkY3ZzbmdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzkwNDQwOTYsImV4cCI6MTk5NDYyMDA5Nn0.RnatBkh36ZvkpU3vpFGUZ1eiOO2_4_nKZmoczvvTddM"
+	},
+};
+
+const response = await fetch(url, options);
+const data = await response.json();
+
+return data.map((event) => ({
+    params: {slug: event.slug},
+    props: { event },
+}))
+
+} 
+
+
+
+---
+
+
+<MainLayout>
+<div class="singleviewsite">
+<a href="/listview/" class="back">Tilbage</a>
+    <section class="pinkbox">
+        <div>
+            <div class="topsinglegrid">
+                <div class="">
+                    <h1>{event.eventtitel}</h1>
+                    <h2>{event.stage}</h2>
+                    <p class="time">{event.starttime} - {event.endtime}</p>
+                </div>
+                <div class="topsinglegridright">
+                    <img src="/icons/{categoryicon}" alt="Kategori ikon">
+                    <p class="category">{event.category}</p>
+                </div>
+            </div>
+                
+                <img src="/icons/{photo}" alt="Billede af event" class="eventphoto_mobile">
+                <p class="description1">{event.description}</p>
+                <button>+ Tilføj til mit program</button>
+
+        </div>
+        <div class="eventphoto">
+            <img src="/icons/{photo}" alt="Billede af event">
+        </div>
+    </section>
+</div>
+</MainLayout>
+
+<style>
+    a {
+        font-family: Oswald;
+        font-size: 1.5rem;
+        color: var(--text-red);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .singleviewsite {
+        max-width: 900px;
+        margin-inline: auto;
+        margin-top: 3%;
+    }
+
+    .eventphoto_mobile {
+        display: none;
+    }
+
+    .pinkbox {
+        background-color: var(--text-pink);
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        padding: 3%;
+        gap: 50px;
+        border: 1px solid var(--text-red);
+        margin-top: 1%;
+    }
+
+    .topsinglegrid {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        margin-bottom: 7%;
+    }
+
+    .topsinglegridright {
+        text-align: center;
+        font-family: Sansita;
+        color: var(--text-red);
+    }
+
+    .topsinglegridright img {
+        margin-top: 5%;
+        width: 60%;
+    }
+
+    .time {
+        background-color: var(--text-lighterred);
+        color: var(--text-white);
+        font-family: Oswald;
+        font-size: 1rem;
+        padding-left: 10px;
+        width: 100px;
+        margin-top: 3%;
+    }
+
+    .eventphoto img {
+        border: 1px solid var(--text-red);
+        width: 100%;
+    }
+
+
+    h1 {
+        font-family: Oswald;
+        color: var(--text-red);
+        font-size: 3rem;
+        font-weight: 100;
+    }
+
+    h2 {
+        font-family: Oswald;
+        color: var(--text-red);
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+
+    .category {
+        font-family: Sansita;
+    }    
+
+    p {
+        font-family: Roboto;
+        color: var(--text-red);
+        margin-top: 3%;
+        line-height: 1.5;
+    }
+
+    button {
+        background-color: var(--text-red);
+        border-style: none;
+        color: var(--text-white);
+        font-family: Roboto;
+        font-size: 1rem;
+        padding: 5px;
+        width: 300px;
+        margin-top: 7%;
+        border-radius: 7px;
+    }
+
+    button:hover {
+        background-color: var(--text-pink);
+        border: 1px solid var(--text-red);
+        color: var(--text-red);
+    }
+
+    @media (max-width: 700px) {
+        .pinkbox {
+        display: grid;
+        grid-template-columns: 1fr;
+        }
+        
+        .eventphoto {
+            display: none;
+        }
+
+        .eventphoto_mobile {
+            display: block;
+            border: 1px solid var(--text-red);
+            width: 100%;
+        }
+
+        button {
+            margin-bottom: 5%;
+        }
+
+        .singleviewsite {
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+}
+
+</style>
