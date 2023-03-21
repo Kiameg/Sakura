@@ -38,12 +38,12 @@ return data.map((event) => ({
                     <p class="time">{event.starttime} - {event.endtime}</p>
                 </div>
                 <div class="topsinglegridright">
-                    <img src={"../../public/icons/" + `${event.categoryicon}`} alt="Kategori ikon">
+                    <img src={"/public/icons/" + `${event.categoryicon}`} alt="Kategori ikon">
                     <p class="category">{event.category}</p>
                 </div>
             </div>
                 
-                <img src={"../../public/photos/" + `${event.photo}`} alt="Billede af event" class="eventphoto_mobile">
+                <img src={"/public/photos/" + `${event.photo}`} alt="Billede af event" class="eventphoto_mobile">
                 <p class="description1">{event.description}</p>
                 <button>+ Tilføj til mit program</button>
 
